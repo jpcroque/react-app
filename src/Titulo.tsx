@@ -1,5 +1,5 @@
 function Titulo() {
-  const name = "Jorge";
+  const name = "Jorge Pablo Calderon Roque";
   if (name) {
     return <h1>HOLA {name}</h1>;
   }
