@@ -1,9 +1,6 @@
-import Titulo from "./Titulo";
+import Card from "./components/Card";
+
 function App() {
-  return (
-    <div>
-      <Titulo />
-    </div>
-  );
+  return <Card body={"Hola Jorge Calderon"} />;
 }
 export default App;
