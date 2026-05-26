@@ -1,26 +1,39 @@
 interface Props {
-  body: string;
+  children: React.ReactNode;
 }
 function Card(props: Props) {
-  const { body } = props;
+  const { children } = props;
   return (
     <div className="card" style={{ width: "350px" }}>
-      <div className="card-body">{body}</div>
+      <div className="card-body">{children}</div>
     </div>
   );
 }
-function CardBody() {
+interface CardBodyProps {
+  title: string;
+  text?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  imageSrc?: string;
+}
+function CardBody(props: CardBodyProps) {
+  const { title, text, buttonText, buttonLink, imageSrc } = props;
   return (
     <>
-      <h5 className="card-title">Card title</h5>
-      <p className="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card’s content.
-      </p>
-      <a href="#" className="btn btn-primary">
-        Go somewhere
+      {imageSrc && (
+        <img src={imageSrc} className="card-img-top" alt="Card image" />
+      )}
+      <h5 className="card-title">{title}</h5>
+      <p className="card-text">{text}</p>
+      <a
+        href={buttonLink}
+        className="btn btn-primary"
+        style={{ width: "auto", height: "40px" }}
+      >
+        {buttonText}
       </a>
     </>
   );
 }
 export default Card;
+export { CardBody };
