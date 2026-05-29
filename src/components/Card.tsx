@@ -12,12 +12,10 @@ function Card(props: Props) {
 interface CardBodyProps {
   title: string;
   text?: string;
-  buttonText?: string;
-  buttonLink?: string;
   imageSrc?: string;
 }
 function CardBody(props: CardBodyProps) {
-  const { title, text, buttonText, buttonLink, imageSrc } = props;
+  const { title, text, imageSrc } = props;
   return (
     <>
       {imageSrc && (
@@ -25,13 +23,6 @@ function CardBody(props: CardBodyProps) {
       )}
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{text}</p>
-      <a
-        href={buttonLink}
-        className="btn btn-primary"
-        style={{ width: "auto", height: "40px" }}
-      >
-        {buttonText}
-      </a>
     </>
   );
 }
