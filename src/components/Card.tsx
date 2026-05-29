@@ -4,7 +4,7 @@ interface Props {
 function Card(props: Props) {
   const { children } = props;
   return (
-    <div className="card" style={{ width: "350px" }}>
+    <div className="card w-96 bg-base-100 shadow-xl p-3 rounded-lg">
       <div className="card-body">{children}</div>
     </div>
   );
@@ -21,7 +21,7 @@ function CardBody(props: CardBodyProps) {
       {imageSrc && (
         <img src={imageSrc} className="card-img-top" alt="Card image" />
       )}
-      <h5 className="card-title">{title}</h5>
+      <h5 className="card-title text-2xl font-bold">{title}</h5>
       <p className="card-text">{text}</p>
     </>
   );

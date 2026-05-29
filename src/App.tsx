@@ -5,7 +5,7 @@ import Button from "./components/Button";
 import { useState } from "react";
 
 function App() {
-  /*const list = ["Carnivoro", "Herbívoro", "Omnívoro"];
+  const list = ["Carnivoro", "Herbívoro", "Omnívoro"];
   const handleSelect = (elemento: string, index: number) => {
     console.log("Elemento seleccionado:", elemento, index);
   };
@@ -18,7 +18,7 @@ function App() {
       />
       <List data={list} onSelect={handleSelect} />
     </Card>
-  );*/
+  );
   const [data, setData] = useState(["Carnivoro", "Herbívoro", "Omnívoro"]);
   const addElement = () => {
     setData([...data, "Nuevo elemento"]);
@@ -34,4 +34,5 @@ function App() {
     </Card>
   );
 }
+
 export default App;
