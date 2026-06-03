@@ -1,17 +1,28 @@
-import { ReactNode } from "react";
-type Props = {
-  children: ReactNode;
-  onClick?: () => void;
-};
-function Button({ children, onClick }: Props) {
+interface ButtonProps {
+  text: string;
+  onClick: () => void;
+  href?: string;
+}
+
+function Button({ text, onClick, href }: ButtonProps) {
+  if (href) {
+    return (
+      <a
+        href={href}
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        {text}
+      </a>
+    );
+  }
   return (
     <button
-      type="button"
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 mb-2"
       onClick={onClick}
+      className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
     >
-      {children}
+      {text}
     </button>
   );
 }
+
 export default Button;
